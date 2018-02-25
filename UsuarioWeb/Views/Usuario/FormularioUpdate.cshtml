@@ -1,0 +1,44 @@
+﻿@using UsuarioWeb.Models;
+@{
+    Layout = null;
+    Usuario u = ViewBag.usuario;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FormularioUpdate</title>
+</head>
+<body>
+    <div> 
+        <form method="GET" action="/Usuario/Actualizar">
+            <table>
+                <tr>
+                    <td>Id</td>
+                    <td><input type="text" name="Id" readonly="readonly" value="@u.Id" /></td>
+                </tr>
+                <tr>
+                    <td>Nombre</td>
+                    <td><input type="text" name="Nombre" value="@u.Nombre" /></td>
+                </tr>
+                <tr>
+                    <td>Telefono</td>
+                    <td><input type="text" name="Telefono" value="@u.Telefono" /></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="text" name="Email" value="@u.Email" /></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2"><input type="submit" value="Guardar" /></td>
+                </tr>
+
+            </table>
+
+        </form>
+    </div>
+</body>
+</html>

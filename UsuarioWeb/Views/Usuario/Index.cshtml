@@ -1,0 +1,41 @@
+﻿@using UsuarioWeb.Models;
+@{
+    Layout = null;
+    List<Usuario> usuarios = ViewBag.resultadoParaLaVista;
+
+}
+
+<h2>Lista de Usuarios</h2>
+<br />
+<br />
+
+<a href="/Usuario/FormularioNuevo"> Insertar nuevo Usuario</a>
+
+<br />
+<br />
+
+
+<table border="1">
+
+    <tr>
+        <td>Id</td>
+        <td>Nombre</td>
+        <td>Telefono</td>
+        <td>Email</td>
+        <td colspan="2">Opciones</td>
+    </tr>
+
+
+    @foreach (Usuario xxx in usuarios)
+    {
+        <tr>
+            <td>@xxx.Id</td>
+            <td>@xxx.Nombre</td>
+            <td>@xxx.Telefono</td>
+            <td>@xxx.Email</td>
+            <td><a href="/Usuario/FormularioUpdate?id=@xxx.Id">Update</a></td>
+            <td><a href="/Usuario/Borrar?id=@xxx.Id">Delete</a></td>
+        </tr>
+    }
+
+</table>
